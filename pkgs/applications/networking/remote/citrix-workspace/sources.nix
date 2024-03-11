@@ -55,16 +55,27 @@ let
       x86hash   = "65b8c144e51b5bd78b98ae69e0fa76d6c020a857d74fd5254be49492527072b6";
       x64suffix = "82";
       x86suffix = "82";
-      homepage  = "https://www.citrix.com/downloads/workspace-app/linux/workspace-app-for-linux-latest.html";
+      homepage  = "https://www.citrix.com/downloads/workspace-app/legacy-workspace-app-for-linux/workspace-app-for-linux-latest10.html";
     };
 
+    "24.02.0" = {
+     # x86 support ended with 2311 per https://docs.citrix.com/en-us/citrix-workspace-app-for-linux/deprecation
+      major     = "24";
+      minor     = "02";
+      patch     = "0";
+      x64hash   = "eaeb5d3bd079d4e5c9707da67f5f7a25cb765e19c36d01861290655dbf2aaee4";
+      x86hash   = ""; 
+      x64suffix = "65";
+      x86suffix = "";
+      homepage  = "https://www.citrix.com/downloads/workspace-app/linux/workspace-app-for-linux-latest.html";
+    };
   };
 
   # Retain attribute-names for abandoned versions of Citrix workspace to
   # provide a meaningful error-message if it's attempted to use such an old one.
   #
   # The lifespans of Citrix products can be found here:
-  # https://www.citrix.com/support/product-lifecycle/milestones/receiver.html
+  # https://www.citrix.com/support/product-lifecycle/workspace-app.html
   unsupportedVersions = [ ];
 in {
   inherit supportedVersions unsupportedVersions;
